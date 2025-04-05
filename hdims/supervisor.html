@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Supervisor - HDIMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Supervisor Login</h2>
+    <div class="login-form">
+      <input type="text" id="supUser" placeholder="Username">
+      <input type="password" id="supPass" placeholder="Password">
+      <button onclick="supervisorLogin()">Login</button>
+    </div>
+
+    <div id="supervisorPanel" class="hidden">
+      <h2>Predefined Patients</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Scheme</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Koushik</td><td>19</td><td>Govt</td><td>In</td></tr>
+          <tr><td>Srikar</td><td>20</td><td>Govt</td><td>Out</td></tr>
+          <tr><td>Rajkumar</td><td>25</td><td>Govt</td><td>In</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

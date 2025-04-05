@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HDIMS Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>HDIMS Dashboard</h2>
+    <p class="subtitle">Unified view for Admin and Supervisor</p>
+
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+      <button onclick="showTab('adminTab')">Admin Panel</button>
+      <button onclick="showTab('supervisorTab')">Supervisor Panel</button>
+    </div>
+
+    <!-- Admin Tab -->
+    <div id="adminTab" class="tab-section">
+      <h3>Add Patient</h3>
+      <div class="form">
+        <input type="text" id="pname" placeholder="Patient Name">
+        <input type="number" id="age" placeholder="Age">
+        <select id="scheme">
+          <option value="Govt">Govt</option>
+          <option value="EHS">EHS</option>
+        </select>
+        <select id="ptype">
+          <option value="In">In</option>
+          <option value="Out">Out</option>
+        </select>
+        <button onclick="addPatient()">Add Patient</button>
+      </div>
+      <h3>Saved Patients</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Scheme</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody id="patientTable"></tbody>
+      </table>
+    </div>
+
+    <!-- Supervisor Tab -->
+    <div id="supervisorTab" class="tab-section hidden">
+      <h3>Predefined Patients</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Scheme</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Koushik</td><td>19</td><td>Govt</td><td>In</td></tr>
+          <tr><td>Srikar</td><td>20</td><td>Govt</td><td>Out</td></tr>
+          <tr><td>Rajkumar</td><td>25</td><td>Govt</td><td>In</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-section').forEach(tab => {
+        tab.classList.add('hidden');
+      });
+      document.getElementById(tabId).classList.remove('hidden');
+    }
+    loadPatients();
+  </script>
+</body>
+</html>

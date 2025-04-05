@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - HDIMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Login</h2>
+    <div class="login-form">
+      <input type="text" id="adminUser" placeholder="Username">
+      <input type="password" id="adminPass" placeholder="Password">
+      <button onclick="adminLogin()">Login</button>
+    </div>
+
+    <div id="adminPanel" class="hidden">
+      <h2>Add Patient</h2>
+      <div class="form">
+        <input type="text" id="pname" placeholder="Patient Name">
+        <input type="number" id="age" placeholder="Age">
+        <select id="scheme">
+          <option value="Govt">Govt</option>
+          <option value="EHS">EHS</option>
+        </select>
+        <select id="ptype">
+          <option value="In">In</option>
+          <option value="Out">Out</option>
+        </select>
+        <button onclick="addPatient()">Add Patient</button>
+      </div>
+
+      <h3>Saved Patients</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Scheme</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody id="patientTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
